@@ -12,24 +12,38 @@
 {% block layout %}
     <div id="layout">
         <header class="header clearfix">
+
+             <nav class="navbar navbar-wp " role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html" title="Boomerang | One template. Infinite solutions">
+                            <img src="images/boomerang-logo-black.png" alt="Boomerang | One template. Infinite solutions">
+                        </a>
+                    </div>
+                    <div >
+                        <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a href="/">Home</a>
+                            </li>
+                            <li >
+                                <a href="/create">Create</a>
+                            </li>
+                        </ul>
+                       
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+
+
+
             {% include "partials/nav_accounts.html" %}
             <div class="container-fluid">
                 <div class="header-content">
                     <div>
-                        {% include "partials/brand.html" %}
-                        {% block brand_title %}<h3>{% trans "The largest ranges of nautical accessories online" %}{{ shop_tagline }}</h3>{% endblock %}
-                    </div>
-                    <div>
                         {% block mini_basket %}<p><i class="icon-cart"></i>{% include "partials/mini_basket.html" %}</p>{% endblock %}
-                        <p class="hidden-phone"><i class="icon-mobile"></i> <span>{% trans "Customer Service" %} <br/> <strong>1-800-424-1324</strong></span></p>
-                        <p class="hidden-phone"><i class="icon-lock"></i> <span>{% trans "Secure by" %} <br/> <strong>{% trans "VeriSign" %}</strong></span></p>
                     </div>
                  </div>
             </div>
-            {% category_tree depth=2 as categories %}
-            {% block navigation %}
-                {% include "partials/nav_primary.html" %}
-            {% endblock %}
         </header>
 
         {% block content_wrapper %}

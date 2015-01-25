@@ -6,12 +6,20 @@
     {% block styles %}
         {% compress css %}
             {% if use_less %}
-                <link rel="stylesheet" type="text/less" href="{% static "demo/less/styles.less" %}" />
                 <link rel="stylesheet" type="text/less" href="{% static "demo/less/responsive.less" %}" />
             {% else %}
-                <link rel="stylesheet" type="text/css" href="{% static "demo/css/styles.css" %}" />
                 <link rel="stylesheet" type="text/css" href="{% static "demo/css/responsive.css" %}" />
             {% endif %}
+            <link rel="stylesheet" type="text/css" href="{% static "demo/css/global-style.css" %}" />
+            <link rel="stylesheet" type="text/css" href="{% static "demo/css/bootstrap.css" %}" />
+
+            <link rel="stylesheet" href="{%  static "demo/plugins/bootstrap-responsive.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/font-awesome.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/animate.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/jquery-ui-1.8.17.custom.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/app.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/pick-a-color-1.1.7.min.css" %}" type="text/css" media="all">
+            <link rel="stylesheet" href="{%  static "demo/plugins/style.css" %}" type="text/css" media="all">
         {% endcompress %}
     {% endblock %}
 {% endblock %}

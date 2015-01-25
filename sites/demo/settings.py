@@ -24,12 +24,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ALLOWED_HOSTS = ['demo.oscarcommerce.com']
 
+POSTGIS_VERSION = ( 2, 1 )
+
 # Use settings_local to override this default
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': '127.0.0.1',
         'NAME': 'oscar_demo',
         'USER': 'postgres',
+        'PASSWORD': 'jinny59koo',
         'ATOMIC_REQUESTS': True
     },
 }
@@ -75,6 +79,8 @@ MEDIA_ROOT = location("public/media")
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
+
+MEDIA_PRODUCT = '/media/upload/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.

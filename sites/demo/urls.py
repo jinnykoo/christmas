@@ -11,6 +11,8 @@ from datacash.dashboard.app import application as datacash_app
 # These need to be imported into this namespace
 from oscar.views import handler500, handler404, handler403  # noqa
 
+from apps.designer import views 
+
 js_info_dict = {
     'packages': ('stores',),
 }
@@ -31,6 +33,8 @@ urlpatterns = [
 
     # Datacash extension
     url(r'^dashboard/datacash/', include(datacash_app.urls)),
+
+    url(r'^create/$', views.create, name='create'),
 
     url(r'', include(application.urls)),
 ]
